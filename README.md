@@ -16,7 +16,7 @@ Clone this repo in /opt folder either local or server (git need to be installed)
 git clone https://github.com/azrin640/ngwp.git
 ```
 
-Navigate and install dependency for angular in ngwp/ngwp-ng (node, npm, angular cli must be installed)
+Navigate and install dependency for angular in ngwp/angular (node, npm, angular cli must be installed)
 
 ```
 npm install
