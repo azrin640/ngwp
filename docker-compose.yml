@@ -1,0 +1,45 @@
+version: "3"
+services:
+
+  ngwp-nginx:
+    image: nginx
+    networks: 
+      - frontend
+    volumes:
+      - /opt/ngwp/ngwp-nginx:/usr/share/nginx/html
+    ports: 
+      - "80:80"
+  
+  ngwp-wp:
+    image: wordpress:latest
+    networks: 
+      - backend
+    depends_on:
+      - ngwp-mysql
+    volumes: 
+       - /opt/ngwp/ngwp-wp:/var/www/html
+    restart: always
+    ports: 
+      - "8000:80"  
+    environment:
+      WORDPRESS_DB_HOST: ngwp-mysql:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wp_password
+      WORDPRESS_DB_NAME: wp_db
+  
+  ngwp-mysql:
+    image: mysql:5.7
+    volumes: 
+      - /opt/ngwp/ngwp-mysql:/var/lib/mysql
+    networks: 
+      - backend
+    restart: always    
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password    
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+      MYSQL_DATABASE: wp_db
+
+networks:
+  frontend:
+  backend:
