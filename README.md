@@ -59,7 +59,7 @@ Navigate to /opt/ngwp and run docker compose
 ~/opt/ngwp $ docker up -d
 ```
 
-Now u can navigate to your server ip or domain, nginx will be running at domain:80, wordpress at domain:8000
+Now u can navigate to your server ip or domain, nginx will be running at domain:80, angular at domain:4200 and wordpress at domain:8000
 
 Enjoy ...# ngwp
 # ngwp
