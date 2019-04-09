@@ -10,7 +10,7 @@ Pushing production build to github and deploying it to Linux/Ubuntu server using
 
 ### How to Install
 
-Clone this repo (git need to be installed)
+Clone this repo in /opt folder either local or server (git need to be installed)
 
 ```
 git clone https://github.com/azrin640/ngwp.git
